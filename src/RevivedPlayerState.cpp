@@ -41,19 +41,19 @@ void RevivedPlayerState::enter(Player& player)
 	player.getAnimatedSprite().setLooped(false);
 
 	// Add animation frames
-	player.getAnimatedSprite().addFrame(sf::IntRect(2454, 1494, 482, 498));
-	player.getAnimatedSprite().addFrame(sf::IntRect(3418, 996, 482, 498));
-	player.getAnimatedSprite().addFrame(sf::IntRect(2936, 996, 482, 498));
-	player.getAnimatedSprite().addFrame(sf::IntRect(2454, 996, 482, 498));
-	player.getAnimatedSprite().addFrame(sf::IntRect(3418, 498, 482, 498));
-	player.getAnimatedSprite().addFrame(sf::IntRect(2936, 498, 482, 498));
-	player.getAnimatedSprite().addFrame(sf::IntRect(2454, 498, 482, 498));
-	player.getAnimatedSprite().addFrame(sf::IntRect(3418, 0, 482, 498));
-	player.getAnimatedSprite().addFrame(sf::IntRect(2936, 0, 482, 498));
-	player.getAnimatedSprite().addFrame(sf::IntRect(2454, 0, 482, 498));
+	player.getAnimatedSprite().addFrame(SDL_Rect{2454, 1494, 482, 498});
+	player.getAnimatedSprite().addFrame(SDL_Rect{3418, 996, 482, 498});
+	player.getAnimatedSprite().addFrame(SDL_Rect{2936, 996, 482, 498});
+	player.getAnimatedSprite().addFrame(SDL_Rect{2454, 996, 482, 498});
+	player.getAnimatedSprite().addFrame(SDL_Rect{3418, 498, 482, 498});
+	player.getAnimatedSprite().addFrame(SDL_Rect{2936, 498, 482, 498});
+	player.getAnimatedSprite().addFrame(SDL_Rect{2454, 498, 482, 4}8});
+	player.getAnimatedSprite().addFrame(SDL_Rect{3418, 0, 482, 498});
+	player.getAnimatedSprite().addFrame(SDL_Rect{2936, 0, 482, 498});
+	player.getAnimatedSprite().addFrame(SDL_Rect{2454, 0, 482, 498});
 	
 	// Set the animation time
-	player.getAnimatedSprite().setTime(seconds(0.03f));
+	player.getAnimatedSprite().setTime(0.03f);
 }
 void RevivedPlayerState::exit(Player& player)
 {

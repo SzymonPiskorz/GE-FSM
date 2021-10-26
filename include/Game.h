@@ -5,6 +5,8 @@
 #include <SDL_image.h>
 #include <SDL_ttf.h>
 #include "Defines.h"
+#include "AnimatedSprite.h"
+#include "Player.h"
 
 class Game
 {

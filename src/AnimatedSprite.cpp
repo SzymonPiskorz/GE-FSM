@@ -31,6 +31,11 @@ AnimatedSprite::~AnimatedSprite() {
 	DEBUG_MSG("~AnimatedSprite()");
 }
 
+void AnimatedSprite::setTexture(SDL_Texture* t_tex)
+{
+	m_texture = t_tex;
+}
+
 const Clock& AnimatedSprite::getClock()
 {
 	return m_clock;
@@ -41,12 +46,12 @@ float AnimatedSprite::getTime()
 	return m_time;
 }
 
-void AnimatedSprite::setTime(Time t)
+void AnimatedSprite::setTime(float t)
 {
 	this->m_time = t;
 }
 
-const vector<IntRect>& AnimatedSprite::getFrames() {
+const vector<SDL_Rect>& AnimatedSprite::getFrames() {
 	return m_frames;
 }
 
@@ -59,11 +64,11 @@ void AnimatedSprite::clearFrames() {
 	}
 }
 
-const IntRect& AnimatedSprite::getFrame(int n) {
+const SDL_Rect& AnimatedSprite::getFrame(int n) {
 	return m_frames[n];
 }
 
-void AnimatedSprite::addFrame(const IntRect& frame) {
+void AnimatedSprite::addFrame(const SDL_Rect& frame) {
 	m_frames.push_back(frame);
 }
 
@@ -116,7 +121,7 @@ void AnimatedSprite::setTextureRect(SDL_Rect t_rec)
 
 void AnimatedSprite::render(int t_x, int t_y, SDL_Renderer* t_renderer)
 {
-	SDL_Rect render = {t_,x t_y, m_rec.w, m_rec.h};
+	SDL_Rect render = {t_x, t_y, m_rec.w, m_rec.h};
 	SDL_RenderCopy(t_renderer, m_texture, &m_rec, &render);
 }
 

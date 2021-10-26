@@ -30,9 +30,9 @@ void DecendLadderPlayerState::enter(Player& player)
 	DEBUG_MSG("Entering DecendLadderPlayerState");
 	player.getAnimatedSprite().clearFrames();
 
-	player.getAnimatedSprite().addFrame(sf::IntRect(1608, 464, 282, 464));
+	player.getAnimatedSprite().addFrame(SDL_Rect{1608, 464, 282, 464});
 
-	player.getAnimatedSprite().setTime(seconds(0.05f));
+	player.getAnimatedSprite().setTime(0.05f);
 }
 void DecendLadderPlayerState::exit(Player& player)
 {

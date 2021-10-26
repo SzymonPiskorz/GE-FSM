@@ -4,7 +4,8 @@
 #include <Player.h>
 #include <PlayerState.h>
 
-class AccendLadderPlayerState : public PlayerState {
+class AccendLadderPlayerState : public PlayerState
+{
 public:
 	virtual PlayerState* handleInput(gpp::Events& input);
 	virtual void update(Player&);

@@ -38,9 +38,9 @@ void ClimbPausePlayerState::enter(Player& player)
 	DEBUG_MSG("Entering ClimbPausePlayerState");
 	player.getAnimatedSprite().clearFrames();
 
-	player.getAnimatedSprite().addFrame(sf::IntRect(1608, 464, 282, 464));
+	player.getAnimatedSprite().addFrame(SDL_Rect{1608, 464, 282, 464});
 	
-	player.getAnimatedSprite().setTime(seconds(0.05f));
+	player.getAnimatedSprite().setTime(0.05f);
 }
 void ClimbPausePlayerState::exit(Player& player) 
 {

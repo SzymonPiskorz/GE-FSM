@@ -15,15 +15,12 @@ Game::Game() :
 		-1,
 		SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 
-	SDL_SetRenderDrawColor(m_renderer, 0, 0, 0, 0);
-
 	int imgFlags = IMG_INIT_PNG;
 	if (!(IMG_Init(imgFlags) & imgFlags))
 	{
 		printf("SDL_image could not initialize! SDL_image Error: %s\n", IMG_GetError());
 	}
-
-	TTF_Init();
+	SDL_SetRenderDrawColor(m_renderer, 0, 0, 0, 0);
 
 	m_rect.x = 100;
 	m_rect.y = 100;
@@ -31,6 +28,10 @@ Game::Game() :
 	m_rect.h = 50;
 
 	m_texture = loadFromFile(PLAYER_SPRITES, m_renderer);
+	if(m_texture == nullptr)
+	{
+		m_texture = loadFromFile(ERROR_SPRITES, m_renderer);
+	}
 
 }
 
@@ -41,6 +42,12 @@ Game::~Game()
 
 void Game::run()
 {
+	AnimatedSprite player_animated_sprite(m_texture);
+
+	Player player(player_animated_sprite);
+
+	gpp::Events input;
+
 	m_gameIsRunning = true;
 	SDL_Event e{};
 
@@ -92,7 +99,7 @@ void Game::rendererDraw()
 	SDL_FRect renderDest{ 5, 5, 200, 100 };
 
 	SDL_SetRenderDrawColor(m_renderer, 0, 0, 0, 0);
-	SDL_RenderCopyF(m_renderer, m_textureIMG, nullptr, nullptr);
+	SDL_RenderCopyF(m_renderer, m_texture, nullptr, nullptr);
 	SDL_RenderDrawRectF(m_renderer, &m_rect);
 	SDL_RenderPresent(m_renderer);
 }
@@ -104,9 +111,7 @@ void Game::cleanUp()
 	m_window = nullptr;
 	m_renderer = nullptr;
 
-	SDL_DestroyTexture(m_textureIMG);
-	SDL_FreeSurface(m_surfaceBMP);
-	SDL_FreeSurface(m_currentSurface);
+	SDL_DestroyTexture(m_texture);
 
 	IMG_Quit();
 	SDL_Quit();

@@ -8,13 +8,14 @@
 
 using namespace std;
 
-class AnimatedSprite : public Sprite {
+class AnimatedSprite
+{
 public:
 	AnimatedSprite();
 	AnimatedSprite(SDL_Texture*);
 	AnimatedSprite(SDL_Texture*, SDL_Rect);
 	~AnimatedSprite();
-
+	void setTexture(SDL_Texture*);
 	const Clock& getClock();
 	float getTime();
 	const vector<SDL_Rect>& getFrames();

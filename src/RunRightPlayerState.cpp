@@ -58,18 +58,18 @@ void RunRightPlayerState::enter(Player& player)
 	DEBUG_MSG("Entering RunRightPlayerState");
 	player.getAnimatedSprite().clearFrames();
 
-	player.getAnimatedSprite().addFrame(sf::IntRect(4986, 3556, 363, 458));
-	player.getAnimatedSprite().addFrame(sf::IntRect(5349, 3556, 363, 458));
-	player.getAnimatedSprite().addFrame(sf::IntRect(5712, 3556, 363, 458));
-	player.getAnimatedSprite().addFrame(sf::IntRect(4986, 4014, 363, 458));
-	player.getAnimatedSprite().addFrame(sf::IntRect(5349, 4014, 363, 458));
-	player.getAnimatedSprite().addFrame(sf::IntRect(5712, 4014, 363, 458));
-	player.getAnimatedSprite().addFrame(sf::IntRect(4986, 4472, 363, 458));
-	player.getAnimatedSprite().addFrame(sf::IntRect(5349, 4472, 363, 458));
-	player.getAnimatedSprite().addFrame(sf::IntRect(5712, 4472, 363, 458));
-	player.getAnimatedSprite().addFrame(sf::IntRect(4986, 4930, 363, 458));
+	player.getAnimatedSprite().addFrame(SDL_Rect{4986, 3556, 363, 458});
+	player.getAnimatedSprite().addFrame(SDL_Rect{5349, 3556, 363, 458});
+	player.getAnimatedSprite().addFrame(SDL_Rect{5712, 3556, 363, 458});
+	player.getAnimatedSprite().addFrame(SDL_Rect{4986, 4014, 363, 458});
+	player.getAnimatedSprite().addFrame(SDL_Rect{5349, 4014, 363, 458});
+	player.getAnimatedSprite().addFrame(SDL_Rect{5712, 4014, 363, 458});
+	player.getAnimatedSprite().addFrame(SDL_Rect{4986, 4472, 363, 458});
+	player.getAnimatedSprite().addFrame(SDL_Rect{5349, 4472, 363, 458});
+	player.getAnimatedSprite().addFrame(SDL_Rect{5712, 4472, 363, 458});
+	player.getAnimatedSprite().addFrame(SDL_Rect{4986, 4930, 363, 458});
 
-	player.getAnimatedSpriteFrame().setTime(seconds(0.05f));
+	player.getAnimatedSpriteFrame().setTime(0.05f);
 }
 void RunRightPlayerState::exit(Player& player) 
 {

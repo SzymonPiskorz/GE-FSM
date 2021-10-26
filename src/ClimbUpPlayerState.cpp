@@ -35,18 +35,18 @@ void ClimbUpPlayerState::enter(Player& player)
 	// Climb Up Animated Sprite
 	player.getAnimatedSprite().clearFrames();
 
-	player.getAnimatedSprite().addFrame(sf::IntRect(1608, 1392, 282, 464));
-	player.getAnimatedSprite().addFrame(sf::IntRect(2172, 928, 282, 464));
-	player.getAnimatedSprite().addFrame(sf::IntRect(1890, 928, 282, 464));
-	player.getAnimatedSprite().addFrame(sf::IntRect(1608, 928, 282, 464));
-	player.getAnimatedSprite().addFrame(sf::IntRect(2172, 464, 282, 464));
-	player.getAnimatedSprite().addFrame(sf::IntRect(1890, 464, 282, 464));
-	player.getAnimatedSprite().addFrame(sf::IntRect(1608, 464, 282, 464));
-	player.getAnimatedSprite().addFrame(sf::IntRect(2172, 0, 282, 464));
-	player.getAnimatedSprite().addFrame(sf::IntRect(1890, 0, 282, 464));
-	player.getAnimatedSprite().addFrame(sf::IntRect(1608, 0, 282, 464));
+	player.getAnimatedSprite().addFrame(SDL_Rect{1608, 1392, 282, 464});
+	player.getAnimatedSprite().addFrame(SDL_Rect{2172, 928, 282, 464});
+	player.getAnimatedSprite().addFrame(SDL_Rect{1890, 928, 282, 464});
+	player.getAnimatedSprite().addFrame(SDL_Rect{1608, 928, 282, 464});
+	player.getAnimatedSprite().addFrame(SDL_Rect{2172, 464, 282, 464});
+	player.getAnimatedSprite().addFrame(SDL_Rect{1890, 464, 282, 464});
+	player.getAnimatedSprite().addFrame(SDL_Rect{1608, 464, 282, 464});
+	player.getAnimatedSprite().addFrame(SDL_Rect{2172, 0, 282, 464});
+	player.getAnimatedSprite().addFrame(SDL_Rect{1890, 0, 282, 464});
+	player.getAnimatedSprite().addFrame(SDL_Rect{1608, 0, 282, 464});
 	
-	player.getAnimatedSprite().setTime(seconds(0.05f));
+	player.getAnimatedSprite().setTime(0.05f);
 }
 void ClimbUpPlayerState::exit(Player& player)
 {

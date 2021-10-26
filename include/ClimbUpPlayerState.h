@@ -4,7 +4,8 @@
 #include <Player.h>
 #include <PlayerState.h>
 
-class ClimbUpPlayerState : public PlayerState {
+class ClimbUpPlayerState : public PlayerState
+{
 public:
 	virtual PlayerState* handleInput(gpp::Events& input);
 	virtual void update(Player&);
