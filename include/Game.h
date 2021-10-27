@@ -36,6 +36,11 @@ private:
 
 	SDL_Texture* m_texture{ nullptr };
 
+	AnimatedSprite player_animated_sprite;
+
+	Player player;
+	gpp::Events input;
+
 	inline SDL_Texture* loadFromFile(const char* const t_path, SDL_Renderer* t_renderer)
 	{
 		SDL_Texture* m_texture{NULL};

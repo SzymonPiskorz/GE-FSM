@@ -1,7 +1,9 @@
 #include "../include/Game.h"
 
 Game::Game() :
-	m_gameIsRunning{ false }
+	m_gameIsRunning{ false },
+	player_animated_sprite{ m_texture },
+	player{player_animated_sprite}
 {
 	SDL_Init(SDL_INIT_VIDEO);
 
@@ -22,16 +24,14 @@ Game::Game() :
 	}
 	SDL_SetRenderDrawColor(m_renderer, 0, 0, 0, 0);
 
-	m_rect.x = 100;
-	m_rect.y = 100;
-	m_rect.w = 200;
-	m_rect.h = 50;
-
 	m_texture = loadFromFile(PLAYER_SPRITES, m_renderer);
 	if(m_texture == nullptr)
 	{
 		m_texture = loadFromFile(ERROR_SPRITES, m_renderer);
 	}
+
+	player_animated_sprite.setTexture(m_texture);
+	player.setAnimatedSprite(player_animated_sprite);
 
 }
 
@@ -42,11 +42,6 @@ Game::~Game()
 
 void Game::run()
 {
-	AnimatedSprite player_animated_sprite(m_texture);
-
-	Player player(player_animated_sprite);
-
-	gpp::Events input;
 
 	m_gameIsRunning = true;
 	SDL_Event e{};
@@ -76,13 +71,13 @@ void Game::processEvents(SDL_Event t_e)
 		{
 			m_gameIsRunning = false;
 		}
-
+		player.handleInput(input);
 	}
 }
 
 void Game::update()
 {
-
+	player.update();
 }
 
 void Game::render()
@@ -95,12 +90,8 @@ void Game::rendererDraw()
 	SDL_SetRenderDrawColor(m_renderer, 255, 255, 255, 0);
 	SDL_RenderClear(m_renderer);
 
-	SDL_FRect renderSrc{ 0, 0, 0, 0 };
-	SDL_FRect renderDest{ 5, 5, 200, 100 };
+	player.getAnimatedSpriteFrame().render(0,0, m_renderer);
 
-	SDL_SetRenderDrawColor(m_renderer, 0, 0, 0, 0);
-	SDL_RenderCopyF(m_renderer, m_texture, nullptr, nullptr);
-	SDL_RenderDrawRectF(m_renderer, &m_rect);
 	SDL_RenderPresent(m_renderer);
 }
 

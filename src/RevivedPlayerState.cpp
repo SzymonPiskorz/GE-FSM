@@ -17,7 +17,7 @@ PlayerState* RevivedPlayerState::handleInput(gpp::Events& input)
 void RevivedPlayerState::update(Player& player) {
 	// Switch from RevivedPlayerState to IdlePlayerState
 	DEBUG_MSG("RevivedPlayerState -> IdlePlayerState");
-	if (m_clock.getElapsedTime().asSeconds() > 0.5f) {
+	if (m_clock.getElapsedTimeAsSeconds() > 0.5f) {
 		PlayerState* temp = player.getPlayerState();
 		PlayerState* state = new IdlePlayerState();
 		player.getPlayerState()->exit(player);
@@ -47,7 +47,7 @@ void RevivedPlayerState::enter(Player& player)
 	player.getAnimatedSprite().addFrame(SDL_Rect{2454, 996, 482, 498});
 	player.getAnimatedSprite().addFrame(SDL_Rect{3418, 498, 482, 498});
 	player.getAnimatedSprite().addFrame(SDL_Rect{2936, 498, 482, 498});
-	player.getAnimatedSprite().addFrame(SDL_Rect{2454, 498, 482, 4}8});
+	player.getAnimatedSprite().addFrame(SDL_Rect{2454, 498, 482, 498});
 	player.getAnimatedSprite().addFrame(SDL_Rect{3418, 0, 482, 498});
 	player.getAnimatedSprite().addFrame(SDL_Rect{2936, 0, 482, 498});
 	player.getAnimatedSprite().addFrame(SDL_Rect{2454, 0, 482, 498});

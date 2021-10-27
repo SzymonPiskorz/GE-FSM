@@ -4,6 +4,7 @@
 #include <Player.h>
 #include <PlayerState.h>
 
+
 class GlidePlayerState : public PlayerState {
 public:
 	virtual PlayerState* handleInput(gpp::Events& input);
@@ -11,7 +12,7 @@ public:
 	virtual void enter(Player&);
 	virtual void exit(Player&);
 private:
-	sf::Clock m_clock;
+	Clock m_clock;
 };
 
 #endif

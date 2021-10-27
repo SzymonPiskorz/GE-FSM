@@ -21,7 +21,7 @@ PlayerState* GlidePlayerState::handleInput(gpp::Events& input)
 }
 void GlidePlayerState::update(Player& player) {
 	DEBUG_MSG("GlidePlayerState -> IdlePlayerState");
-	if (m_clock.getElapsedTime().asSeconds() > 1.2f) {
+	if (m_clock.getElapsedTimeAsSeconds() > 1.2f) {
 		PlayerState* temp = player.getPlayerState();
 		PlayerState* state = new IdlePlayerState();
 		player.getPlayerState()->exit(player);

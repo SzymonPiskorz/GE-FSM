@@ -27,7 +27,7 @@ PlayerState* JumpPlayerState::handleInput(gpp::Events& input)
 }
 void JumpPlayerState::update(Player& player) {
 	DEBUG_MSG("JumpPlayerState -> GlidePlayerState");
-	if (m_clock.getElapsedTime().asSeconds() > 1.2f) {
+	if (m_clock.getElapsedTimeAsSeconds() > 1.2f) {
 		PlayerState* temp = player.getPlayerState();
 		PlayerState* state = new GlidePlayerState();
 		player.getPlayerState()->exit(player);
