@@ -25,6 +25,8 @@ private:
 
 	void cleanUp();
 
+	void inputs(SDL_Event);
+
 	bool m_gameIsRunning;
 
 	const int WINDOW_WIDTH{ 640 };
@@ -36,9 +38,9 @@ private:
 
 	SDL_Texture* m_texture{ nullptr };
 
-	AnimatedSprite player_animated_sprite;
+	AnimatedSprite* player_animated_sprite;
 
-	Player player;
+	Player* player;
 	gpp::Events input;
 
 	inline SDL_Texture* loadFromFile(const char* const t_path, SDL_Renderer* t_renderer)

@@ -23,5 +23,5 @@ uint32_t Clock::getElapsedTime()
 
 float Clock::getElapsedTimeAsSeconds()
 {
-    return getElapsedTime()/1000.0f;
+    return getElapsedTime() / 1000.0f;
 }
