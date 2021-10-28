@@ -28,11 +28,10 @@ Game::Game() :
 		m_texture = loadFromFile(ERROR_SPRITES, m_renderer);
 	}
 
-	//player_animated_sprite.setTexture(m_texture);
-	//player.setAnimatedSprite(player_animated_sprite);
-
 	player_animated_sprite = new AnimatedSprite(m_texture);
 	player = new Player(*player_animated_sprite);
+
+	
 
 }
 
