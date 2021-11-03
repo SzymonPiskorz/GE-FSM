@@ -9,7 +9,7 @@ class Command
 public:
     virtual ~Command(){};
     virtual void execute(gpp::Events* event) = 0;
-private:
+protected:
     Command(){};
 };
 

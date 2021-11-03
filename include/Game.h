@@ -8,6 +8,7 @@
 #include "AnimatedSprite.h"
 #include "Player.h"
 #include "Command.h"
+#include "map"
 
 class Game
 {
@@ -44,7 +45,7 @@ private:
 	Player* player;
 	gpp::Events input;
 
-	vector<Command*> m_commands;
+	std::map<string, Command*> m_commands;
 
 	inline SDL_Texture* loadFromFile(const char* const t_path, SDL_Renderer* t_renderer)
 	{
